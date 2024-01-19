@@ -9,7 +9,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Desafio calculadora",
       home: Calculadora(),
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+      scaffoldBackgroundColor: Colors.black),
     );
   }
 }
