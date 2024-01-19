@@ -3,25 +3,18 @@ import 'package:flutter/material.dart';
 class MostraResultado extends StatelessWidget {
   final String resultado;
 
-  MostraResultado({required this.resultado});
+  const MostraResultado({Key? key, required this.resultado}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final estiloBotao = TextStyle(
-      color: Colors.white,
-      fontSize: 30,
-      fontWeight: FontWeight.w300,
-    );
-
     return Container(
-      padding: EdgeInsets.only(top: 15, bottom: 15),
+      padding: EdgeInsets.only(bottom: 20),
+      width: double.infinity,
       alignment: Alignment.centerRight,
       child: FittedBox(
-        fit: BoxFit.contain, //Se a quantidade de digitos passar a tela ela diminui os digitos para caber na tela
-        child: Text(
-          this.resultado,
-          style: estiloBotao,
-        ),
+        fit: BoxFit
+            .contain, //Se a quantidade de digitos passar a tela ela diminui os digitos para caber na tela
+        child: Text(this.resultado, style: TextStyle(fontSize: 30)),
       ),
     );
   }

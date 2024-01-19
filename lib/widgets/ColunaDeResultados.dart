@@ -7,20 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ColunaDeResultados extends StatelessWidget {
+  
   final controladora = Get.find<Controladora>();
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
+    
+    return Obx( 
       () => Column(
         children: [
-          MostraExpressao(expressao: '${controladora.primeiroNumero}'),
-          MostraExpressao(expressao: '${controladora.operacao}'),
-          MostraExpressao(expressao: '${controladora.segundoNumero}'),
+          MostraExpressao( expressao: '${ controladora.primeiroNumero }' ),
+          MostraExpressao( expressao: '${ controladora.operacao }' ),
+          MostraExpressao( expressao: '${ controladora.segundoNumero }' ),
           Linha(),
-          MostraResultado(resultado: '${controladora.resultado}'),
+          MostraResultado( resultado: '${ controladora.resultado }' ),
         ],
-      ),
-    );
+    ));
   }
 }
