@@ -6,8 +6,8 @@ class BotaoCalcularadora extends StatelessWidget {
 
   final Function onPressed;
 
-  const BotaoCalcularadora(String s,
-      {super.key, required this.botao, corDeFundo, required this.onPressed})
+  const BotaoCalcularadora(
+      {required this.botao, corDeFundo, required this.onPressed})
       : this.corDeFundo = corDeFundo ?? const Color(0xff333333);
 
   @override
@@ -19,19 +19,19 @@ class BotaoCalcularadora extends StatelessWidget {
     );
 
     return Container(
-      margin: EdgeInsets.only(),
+      margin: EdgeInsets.only(bottom: 10, right: 8, left: 5 ),
       child: TextButton(
         style: estiloBotao,
         child: Container(
-          width: 150,
-          height: 65,
+          width: 60,
+          height: 75,
           child: Center(
             child: Text(
             this.botao,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
           )),
         ),
-        onPressed: () => onPressed,
+        onPressed: () => this.onPressed(),
       ),
     );
   }
